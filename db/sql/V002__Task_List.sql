@@ -3,7 +3,7 @@ CREATE TYPE CompletionStatus as ENUM ('TODO', 'DONE');
 CREATE TABLE todo.task_lists (
   task_list_id BIGINT NOT NULL,
   title INT NOT NULL,
-  created_at TIMESTAMP NOT NULL DEFAULT now(),
+  updated_at TIMESTAMP NOT NULL DEFAULT now(),
   PRIMARY KEY (task_list_id)
 );
 
@@ -13,7 +13,7 @@ CREATE TABLE todo.task (
   task_list_id BIGINT NOT NULL,
   status CompletionStatus NOT NULL,
   title INT NOT NULL,
-  created_at TIMESTAMP NOT NULL DEFAULT now(),
+  updated_at TIMESTAMP NOT NULL DEFAULT now(),
   PRIMARY KEY (task_id)
 );
 
